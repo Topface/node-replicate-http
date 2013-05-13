@@ -12,9 +12,11 @@ npm install replicate-http
 Note that destination must support webdav PUT method.
 
 ```javascript
-var replicate = require("replicate-http");
+var replicate = require("replicate-http"),
+    from      = "http://pewpewpew.com/passwords.txt",
+    to        = "http://backup.pewpewpew.com/passwords.txt";
 
-replicate("http://pewpewpew.com/passwords.txt", "http://backup.pewpewpew.com/passwords.txt", function() {
+replicate(from, to, function(error) {
     if (error) {
         throw error;
     }

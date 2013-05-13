@@ -1,0 +1,22 @@
+{
+  "name": "replicate-http",
+  "version": "0.1.0",
+  "description": "Replicate remote files by webdav protocol.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Topface/node-replicate-http.git"
+  },
+  "keywords": [
+    "webdav",
+    "dav",
+    "http",
+    "replicate",
+    "copy"
+  ],
+  "author": "Ian Babrou <ibobrik@gmail.com> (http://bobrik.name/)",
+  "license": "BSD"
+}

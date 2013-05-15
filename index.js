@@ -41,7 +41,10 @@
                 });
 
                 put.on("end", callback);
-                put.on("error", callback);
+                put.on("error", function(error) {
+                    res.resume(); // because we need to put it somewhere
+                    callback(error);
+                });
 
                 res.pipe(put);
             }

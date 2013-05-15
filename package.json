@@ -1,6 +1,6 @@
 {
   "name": "replicate-http",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Replicate remote files by webdav protocol.",
   "main": "index.js",
   "scripts": {

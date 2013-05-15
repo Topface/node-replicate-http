@@ -42,7 +42,10 @@
 
                 put.on("end", callback);
                 put.on("error", function(error) {
-                    res.resume(); // because we need to put it somewhere
+                    // because we need to put it somewhere
+                    res.unpipe(put);
+                    res.resume();
+
                     callback(error);
                 });
 

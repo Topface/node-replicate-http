@@ -2,9 +2,19 @@
     var http = require("http"),
         url  = require("url");
 
-    module.exports = function(from, to, callback) {
-        var toUrl = url.parse(to),
+    module.exports = function(from, to, cb) {
+        var toUrl    = url.parse(to),
+            returned = false,
             put;
+
+        function callback(error) {
+            if (returned) {
+                return;
+            }
+
+            returned = true;
+            cb(error);
+        }
 
         http.get(from, function(res) {
             res.on("error", callback);
@@ -40,7 +50,6 @@
                     res.resume();
                 });
 
-                put.on("end", callback);
                 put.on("error", function(error) {
                     // because we need to put it somewhere
                     res.unpipe(put);
